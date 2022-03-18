@@ -1,0 +1,1 @@
+{"version":3,"file":"jsonwebtoken.js","sourceRoot":"","sources":["jsonwebtoken.ts"],"names":[],"mappings":";;;;;AAAA,gEAAwC;AACxC,IAAI,CAAC,oBAAoB,CAAC,cAAc,CAAC,CAAC;AAC1C,sBAAY,CAAC,MAAM,GAAG,IAAI,CAAC,EAAE,CAC3B,CAAC,MAAc,EAAE,IAAY,EAAE,QAAgB,EAAE,EAAE,CAAC,EAAE,CACvD,CAAC;AACF,MAAM,CAAC,OAAO,GAAG,sBAAY,CAAC"}

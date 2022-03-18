@@ -1,0 +1,42 @@
+{
+  "name": "check-answer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "build": "tsc -p tsconfig.json",
+    "copy": "copyfiles -V -u 1 -e ./src/**.map -e ./src/tests src/*.js src/**/*.js dist/",
+    "zip": "cd dist && zip -r ../deploy/function.zip .",
+    "upload": "chmod +rx deploy-function.sh && AWS_ENV=PRODUCTION ./deploy-function.sh",
+    "set-layer-version": "chmod +rx deploy-layer.sh && ./deploy-layer.sh",
+    "deploy": "npm run clean; npm run build; npm run copy; npm run zip; AWS_ENV=PRODUCTION npm run upload",
+    "server": "nodemon server.js",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/connect-livereload": "^0.6.0",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.4.1",
+    "@types/livereload": "^0.9.1",
+    "@types/node": "^17.0.21",
+    "connect-livereload": "^0.6.1",
+    "copyfiles": "^2.4.1",
+    "express": "^4.17.3",
+    "jest": "^27.5.1",
+    "livereload": "^0.9.3",
+    "nodemon": "^2.0.15",
+    "nvm": "0.0.4",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "ts-loader": "8.0.13",
+    "ts-node": "^10.7.0",
+    "ts-jest": "^27.1.3",
+    "tslint": "6.1.3",
+    "tslint-loader": "3.5.4",
+    "typescript": "4.1.3"
+  },
+  "dependencies": {}
+}
